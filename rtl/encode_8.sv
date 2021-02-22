@@ -22,7 +22,7 @@
 
 `timescale 1ns / 1ps
 
-module coder_8
+module encode_8
 (
     input  logic         data_0_i,
     input  logic         data_1_i,

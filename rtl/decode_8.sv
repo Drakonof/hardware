@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module decoder_8
+module endecode_8
 (
     input  logic [2:0] data_i,
             
