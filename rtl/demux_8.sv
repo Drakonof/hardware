@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module demux_8 # 
 (
     parameter integer DATA_WIDTH = 1
