@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module mux_2 #
+module mux_2 # 
 (
     parameter integer DATA_WIDTH = 1
 )
