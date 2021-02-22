@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module decoder_2
+module decode_2
 (
     input  logic data_i,
             
