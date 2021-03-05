@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module gray_coder #
+module gray_encode #
 (
     parameter integer DATA_WIDTH = 8
 )
@@ -10,7 +10,7 @@ module gray_coder #
 );
     
     always_comb begin
-        gray_value_o = (binary_value_i >> 1) ^ binary_value_i;
+        gray_value_o = binary_value_i ^ (binary_value_i >> 1);
     end
     
 endmodule
