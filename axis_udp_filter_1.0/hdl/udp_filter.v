@@ -5,7 +5,7 @@
 module udp_filter #
 ( 
     parameter integer                STREAM_DATA_WIDTH  = 32              ,
-    parameter [`MAC_WIDTH - 1 : 0]   MAC_ADDRESS        = 48'h000a35000102,
+    parameter [`MAC_WIDTH - 1 : 0]   MAC_ADDRESS        = 48'h00350a000201,
     parameter [`IP_V4_WIDTH - 1 : 0] IP_ADDRESS         = 32'h0a12a8c0    ,
     parameter [`UDP_WIDTH - 1 : 0]   UDP_PORT           = 16'h901f        ,
     parameter integer                PAYLOAD_MAX_SIZE   = 1600            ,
@@ -159,7 +159,7 @@ module udp_filter #
             ip_pack_payload_lenght <= {PAYLOAD_WIDTH{1'h0}};
             ip_dst_addr_header     <= {HEADERS_SIZE{1'h0}};
             s_axis_tdata_header    <= {HEADERS_SIZE{1'h0}};
-            eth_dst_mac_head       <= {STREAM_DATA_WIDTH{1'h0}};
+            eth_dst_mac_head       <= {`MAC_WIDTH{1'h0}};
         end
         else begin  
             case (fsm_state)
