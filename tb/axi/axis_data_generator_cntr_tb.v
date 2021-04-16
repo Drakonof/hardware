@@ -21,10 +21,10 @@ module axis_data_generator_cntr_tb;
  
     wire [DATA_WIDTH - 1 : 0]     data;
     
-    reg  axis_tready;
-    reg  clk;
-    reg  rst_n;
-    reg  enable;
+    reg  axis_tready = 1'h0;
+    reg  clk         = 1'h0;
+    reg  rst_n       = 1'h1;
+    reg  enable      = 1'h0;
   
     COUNTER_TC_MACRO #
     (
@@ -74,7 +74,7 @@ module axis_data_generator_cntr_tb;
         wait (axis_tvalid);
       
         repeat(WAIT_READY_TICK_NUM) begin 
-            if ({DATA_WIDTH{1'h0}} !== axis_tdata) begin
+            if ('h0 !== axis_tdata) begin
                 $display($time, "The ready signal error.");
                 $stop();
             end

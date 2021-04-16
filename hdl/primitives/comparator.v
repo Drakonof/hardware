@@ -8,9 +8,9 @@ module comparator #
     input  wire [DATA_WIDTH - 1 : 0] data_0_i,
     input  wire [DATA_WIDTH - 1 : 0] data_1_i,
            
-    output wire         equal_o,
-    output wire         greater_o,
-    output wire         lower_o
+    output wire                      equal_o,
+    output wire                      greater_o,
+    output wire                      lower_o
 );
 
     assign equal_o   = (data_0_i == data_1_i);
