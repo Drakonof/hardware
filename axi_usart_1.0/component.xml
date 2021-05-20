@@ -1,0 +1,1170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spirit:component xmlns:xilinx="http://www.xilinx.com" xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <spirit:vendor>user.org</spirit:vendor>
+  <spirit:library>user</spirit:library>
+  <spirit:name>axi_usart</spirit:name>
+  <spirit:version>1.0</spirit:version>
+  <spirit:busInterfaces>
+    <spirit:busInterface>
+      <spirit:name>axi_a_rst_n</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="reset_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RST</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_a_rst_n</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>POLARITY</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_A_RST_N.POLARITY" spirit:choiceRef="choice_list_9d8b0d81">ACTIVE_LOW</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>axi_clk</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="signal" spirit:name="clock_rtl" spirit:version="1.0"/>
+      <spirit:slave/>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>CLK</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>axi_clk</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+      <spirit:parameters>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_RESET</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_CLK.ASSOCIATED_RESET">axi_a_rst_n</spirit:value>
+        </spirit:parameter>
+        <spirit:parameter>
+          <spirit:name>ASSOCIATED_BUSIF</spirit:name>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.AXI_CLK.ASSOCIATED_BUSIF">s_axi</spirit:value>
+        </spirit:parameter>
+      </spirit:parameters>
+    </spirit:busInterface>
+    <spirit:busInterface>
+      <spirit:name>s_axi</spirit:name>
+      <spirit:busType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm" spirit:version="1.0"/>
+      <spirit:abstractionType spirit:vendor="xilinx.com" spirit:library="interface" spirit:name="aximm_rtl" spirit:version="1.0"/>
+      <spirit:slave>
+        <spirit:memoryMapRef spirit:memoryMapRef="s_axi"/>
+      </spirit:slave>
+      <spirit:portMaps>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_awaddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_awprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_awvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>AWREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_awready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_wdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WSTRB</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_wstrb</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_wvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>WREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_wready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_bresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_bvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>BREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_bready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARADDR</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_araddr</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARPROT</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_arprot</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_arvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>ARREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_arready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RDATA</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_rdata</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RRESP</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_rresp</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RVALID</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_rvalid</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+        <spirit:portMap>
+          <spirit:logicalPort>
+            <spirit:name>RREADY</spirit:name>
+          </spirit:logicalPort>
+          <spirit:physicalPort>
+            <spirit:name>s_axi_rready</spirit:name>
+          </spirit:physicalPort>
+        </spirit:portMap>
+      </spirit:portMaps>
+    </spirit:busInterface>
+  </spirit:busInterfaces>
+  <spirit:memoryMaps>
+    <spirit:memoryMap>
+      <spirit:name>s_axi</spirit:name>
+      <spirit:addressBlock>
+        <spirit:name>reg0</spirit:name>
+        <spirit:baseAddress spirit:format="bitString" spirit:resolve="user" spirit:bitStringLength="32">0</spirit:baseAddress>
+        <spirit:range spirit:format="long" spirit:resolve="dependent" spirit:dependency="pow(2,(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_WIDTH&apos;)) - 1) + 1)" spirit:minimum="4096" spirit:rangeType="long">4294967296</spirit:range>
+        <spirit:width spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_WIDTH&apos;)) - 1) + 1">32</spirit:width>
+        <spirit:usage>register</spirit:usage>
+      </spirit:addressBlock>
+    </spirit:memoryMap>
+  </spirit:memoryMaps>
+  <spirit:model>
+    <spirit:views>
+      <spirit:view>
+        <spirit:name>xilinx_verilogsynthesis</spirit:name>
+        <spirit:displayName>Verilog Synthesis</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:synthesis</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>axi_lite_usart</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogsynthesis_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>bbb59ba2</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_verilogbehavioralsimulation</spirit:name>
+        <spirit:displayName>Verilog Simulation</spirit:displayName>
+        <spirit:envIdentifier>verilogSource:vivado.xilinx.com:simulation</spirit:envIdentifier>
+        <spirit:language>verilog</spirit:language>
+        <spirit:modelName>axi_lite_usart</spirit:modelName>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_verilogbehavioralsimulation_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>bbb59ba2</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>xilinx_xpgui</spirit:name>
+        <spirit:displayName>UI Layout</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:xgui.ui</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>xilinx_xpgui_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>26232bb0</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+      <spirit:view>
+        <spirit:name>bd_tcl</spirit:name>
+        <spirit:displayName>Block Diagram</spirit:displayName>
+        <spirit:envIdentifier>:vivado.xilinx.com:block.diagram</spirit:envIdentifier>
+        <spirit:fileSetRef>
+          <spirit:localName>bd_tcl_view_fileset</spirit:localName>
+        </spirit:fileSetRef>
+        <spirit:parameters>
+          <spirit:parameter>
+            <spirit:name>viewChecksum</spirit:name>
+            <spirit:value>45a2f450</spirit:value>
+          </spirit:parameter>
+        </spirit:parameters>
+      </spirit:view>
+    </spirit:views>
+    <spirit:ports>
+      <spirit:port>
+        <spirit:name>axi_clk</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>axi_a_rst_n</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_awaddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_awprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_awvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_awready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_wdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_wstrb</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="((spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_WIDTH&apos;)) / 8) - 1)">3</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">1</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_wvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_wready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_bresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_bvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_bready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_araddr</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_arprot</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">2</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_arvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_arready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_rdata</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(spirit:decode(id(&apos;MODELPARAM_VALUE.DATA_WIDTH&apos;)) - 1)">31</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_rresp</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:vector>
+            <spirit:left spirit:format="long">1</spirit:left>
+            <spirit:right spirit:format="long">0</spirit:right>
+          </spirit:vector>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_rvalid</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>s_axi_rready</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+          <spirit:driver>
+            <spirit:defaultValue spirit:format="long">0</spirit:defaultValue>
+          </spirit:driver>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>tx</spirit:name>
+        <spirit:wire>
+          <spirit:direction>out</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+      <spirit:port>
+        <spirit:name>rx</spirit:name>
+        <spirit:wire>
+          <spirit:direction>in</spirit:direction>
+          <spirit:wireTypeDefs>
+            <spirit:wireTypeDef>
+              <spirit:typeName>wire</spirit:typeName>
+              <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+              <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
+            </spirit:wireTypeDef>
+          </spirit:wireTypeDefs>
+        </spirit:wire>
+      </spirit:port>
+    </spirit:ports>
+    <spirit:modelParameters>
+      <spirit:modelParameter xsi:type="spirit:nameValueTypeType" spirit:dataType="integer">
+        <spirit:name>DATA_WIDTH</spirit:name>
+        <spirit:displayName>Data Width</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.DATA_WIDTH">32</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>CLK_VALUE_MHZ</spirit:name>
+        <spirit:displayName>Clk Value Mhz</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.CLK_VALUE_MHZ">10</spirit:value>
+      </spirit:modelParameter>
+      <spirit:modelParameter spirit:dataType="integer">
+        <spirit:name>BAUD_MAX_VALUE</spirit:name>
+        <spirit:displayName>Baud Max Value</spirit:displayName>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.BAUD_MAX_VALUE">115200</spirit:value>
+      </spirit:modelParameter>
+    </spirit:modelParameters>
+  </spirit:model>
+  <spirit:choices>
+    <spirit:choice>
+      <spirit:name>choice_list_9d8b0d81</spirit:name>
+      <spirit:enumeration>ACTIVE_HIGH</spirit:enumeration>
+      <spirit:enumeration>ACTIVE_LOW</spirit:enumeration>
+    </spirit:choice>
+  </spirit:choices>
+  <spirit:fileSets>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/comparator.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/counter.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/piso.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/uart_tx.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/axi_lite_usart.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_e5c8371b</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_verilogbehavioralsimulation_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>hdl/comparator.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/counter.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/piso.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/uart_tx.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/axi_lite_usart.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>xilinx_xpgui_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>xgui/axi_usart_v1_0.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+        <spirit:userFileType>CHECKSUM_26232bb0</spirit:userFileType>
+        <spirit:userFileType>XGUI_VERSION_2</spirit:userFileType>
+      </spirit:file>
+    </spirit:fileSet>
+    <spirit:fileSet>
+      <spirit:name>bd_tcl_view_fileset</spirit:name>
+      <spirit:file>
+        <spirit:name>bd/bd.tcl</spirit:name>
+        <spirit:fileType>tclSource</spirit:fileType>
+      </spirit:file>
+    </spirit:fileSet>
+  </spirit:fileSets>
+  <spirit:description>an usart ip</spirit:description>
+  <spirit:parameters>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_BASEADDR</spirit:name>
+      <spirit:displayName>C S00 AXI BASEADDR</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_BASEADDR" spirit:order="5" spirit:bitStringLength="32">0xFFFFFFFF</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_BASEADDR">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>C_S00_AXI_HIGHADDR</spirit:name>
+      <spirit:displayName>C S00 AXI HIGHADDR</spirit:displayName>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.C_S00_AXI_HIGHADDR" spirit:order="6" spirit:bitStringLength="32">0x00000000</spirit:value>
+      <spirit:vendorExtensions>
+        <xilinx:parameterInfo>
+          <xilinx:enablement>
+            <xilinx:isEnabled xilinx:id="PARAM_ENABLEMENT.C_S00_AXI_HIGHADDR">false</xilinx:isEnabled>
+          </xilinx:enablement>
+        </xilinx:parameterInfo>
+      </spirit:vendorExtensions>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>Component_Name</spirit:name>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.Component_Name" spirit:order="1">axi_usart_v1_0</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>DATA_WIDTH</spirit:name>
+      <spirit:displayName>Data Width</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.DATA_WIDTH">32</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>CLK_VALUE_MHZ</spirit:name>
+      <spirit:displayName>Clk Value Mhz</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.CLK_VALUE_MHZ">10</spirit:value>
+    </spirit:parameter>
+    <spirit:parameter>
+      <spirit:name>BAUD_MAX_VALUE</spirit:name>
+      <spirit:displayName>Baud Max Value</spirit:displayName>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.BAUD_MAX_VALUE">115200</spirit:value>
+    </spirit:parameter>
+  </spirit:parameters>
+  <spirit:vendorExtensions>
+    <xilinx:coreExtensions>
+      <xilinx:supportedFamilies>
+        <xilinx:family xilinx:lifeCycle="Pre-Production">zynq</xilinx:family>
+      </xilinx:supportedFamilies>
+      <xilinx:taxonomies>
+        <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
+      </xilinx:taxonomies>
+      <xilinx:displayName>axi_usart</xilinx:displayName>
+      <xilinx:coreRevision>11</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2021-04-20T09:23:40Z</xilinx:coreCreationDateTime>
+      <xilinx:tags>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30144902_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56b232c6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@696ae821_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ed453c2_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c7f8dc1_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@473cc921_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@74cd4382_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17888a37_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2821b0d9_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a111c92_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4413b18_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18836640_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@31f42e3f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59408d87_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ac3e16_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f2734a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7066d787_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56661a95_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d01af95_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b9fc5f4_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6070ff55_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@35fd27d9_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@536e5a4c_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5cc19816_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6443d89b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b6a3848_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@706022c4_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@742eb63_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f12b5ef_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5ff3f1c7_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ac23a30_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e5eff24_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1df77aa0_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79b3ba90_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f439f1f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51049d32_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c000465_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@138746b8_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1e514126_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@375fc4d9_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10e19de8_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@18e1eabf_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@174a6c63_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12d25f03_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@352ec061_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c2f8a66_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@96f0385_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@365d3ed6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33b90fc2_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c92594f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1ea8df99_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6d8254bf_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39311ce1_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7a493fa_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51aa1202_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27cfd0f6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c321e00_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14ab256c_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37f601e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@10f1dac7_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62c3cf37_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@326a2ce2_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e53a61b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1861604_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52ac728b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43e4afe7_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3cdf3ac5_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6e0c892f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@27575235_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@594decc8_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fa1d587_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14b307d7_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1d510a55_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a3e69cf_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4be2d56b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4dec6e89_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53a9df32_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4330861d_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@272a6f8f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5116ce9d_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c57cf70_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7643c318_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@739c0bd6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@552ccb22_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c66819f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@57500ef8_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34e0dfab_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d6e8235_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33378fa2_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@e0ec2c1_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e164b17_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@518fc8f1_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b33bae0_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2391bcf1_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ea7619f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29a2f533_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@32e09070_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40dc207b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4387e421_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78ba31b0_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@111ab952_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c6ebea5_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16069484_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15058c24_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7c97ba5a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28341bef_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37915451_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d8f1c6a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2d69f166_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7935bd90_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@93d217e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f18ae8_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1943ddb3_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5967feeb_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39f3a24f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7befbb8c_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3bf0dbcd_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5edabded_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64858419_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@568fe4f4_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b371a1c_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6adc0963_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1c68e6cf_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f963a30_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a6793a2_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a3555bb_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56b78ef1_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@93ecac0_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38953fce_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3dcee6cb_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@333d6657_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40720346_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30aad592_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ffe3e88_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bac6675_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e950c20_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11e4277e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56bee0cd_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@62f53474_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@22e6ac78_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@303fdeb9_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b6414a3_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@51bff32d_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ad7f097_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@392e4e8e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@276ad091_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f0ef146_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6aca0588_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37f1c3ad_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@fccc278_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6588f7e5_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7fccb0ed_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cc0486b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@445d24eb_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e1daf2c_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42b1c7fb_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@758cfc7e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@47ff02b6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@652c0831_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@79acd574_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5d716a78_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a9297e1_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4208de17_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b39af18_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c8ff2ea_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@20f67d5d_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@678b5d8d_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c09b42e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4bfcc337_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2192c01a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3027529_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a214f26_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2041cc31_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7d5fd0b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@78ddf007_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e69a479_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48643c93_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42e7db0d_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b2a577a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15a19ca3_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@184acb0e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@be8ed1b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4e0611c6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1f9cedd0_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5fead79d_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19a6a20b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76af1c0e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@651e50b0_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@609a76fd_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11d4b9c_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@738510a8_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15890273_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3487e491_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@67016b47_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6b5823c0_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@37489ef6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14d0612b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e6aa196_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f12e063_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a2b275f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b29361a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@52d4985a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@639354f5_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@621e40b9_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@63968a24_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6564db91_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ea23d7c_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6f0b3832_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@366d54cd_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@72cfebe8_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5a4cb09_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b71d32c_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@45e7b8ec_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76fad597_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@26bca8e2_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ffa6bd7_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c1f497a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5bcfae42_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@34ae0af6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c12230a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@14568895_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7544695b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43a47a05_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@299e8880_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@15f92648_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@a3a530a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e3e9bfc_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@36729b04_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1cf9517d_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12213fd_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7e9946b9_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@56780774_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2b180291_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@354295c7_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cf6fef9_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f60fea6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f70f112_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7dff6d2f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4012b94e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@781e2d6b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7bc6b046_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@705a2bbb_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42578006_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@16cbddd2_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b52b935_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ca53eed_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@725ffce2_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ea2f2ba_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ef079ea_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3e47110b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f766373_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@33a15d28_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2e318cb6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c85fb0e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a580a52_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4f226166_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@11d5c802_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ec9e4d3_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ea851f6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5faac60d_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b140f83_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5c6e66fc_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@41a722e0_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38568aae_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d53559b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1b1a76d4_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a5e4c20_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4ea7ac9_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19bbd741_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@25410ce9_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ee3576a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13ea1f31_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2ce54204_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4befe1bf_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7079a667_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3eb6313e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a1e80a6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@40d5315b_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6cdee098_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@f7a5039_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@13d8930f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1de6738c_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ed8f4ad_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@549c3703_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49edc4e4_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@467cfb28_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@28b5b0f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4db49b9a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29b99eac_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b044e43_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@714537cd_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6da071d5_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7de8b92a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5796d689_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@53d7a00a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b7a67d_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5486084e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b58163c_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@66d945bf_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44b4eafc_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2227ad3c_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5b824740_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2f78931f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@607a0d53_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@b7512c6_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@521436c3_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@19ce51d3_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@71704cfc_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4875d755_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1452bdcc_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6c191d94_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@532d1924_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6a94adea_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@76e4b600_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@710d90df_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4d8d9237_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4a5e088_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2a31adf3_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@60b3164f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@d31782a_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@49fd1b51_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7ababa65_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@64b0b43d_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48834c31_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3b21f138_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43d2e8ee_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4eb536da_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c2b19d3_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3ea97bb9_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@634f00f5_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@39693033_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ccd74fa_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@43a5237f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@6ead0911_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@44061d7_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30bce3e4_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7cd40d69_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@48da6943_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1dfbbc28_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1a7cd37_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@59490104_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3288a4bd_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5271c97e_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@8b41c2c_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@7b69c52f_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@87a919_ARCHIVE_LOCATION">/media/shimko/2E0A00DD0A00A445/workspace_vivado_2018_3/working_projects/hardware/xc7z010_hyperion/ip_repo/axi_usart_1.0</xilinx:tag>
+      </xilinx:tags>
+    </xilinx:coreExtensions>
+    <xilinx:packagingInfo>
+      <xilinx:xilinxVersion>2018.3</xilinx:xilinxVersion>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="1199df27"/>
+      <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="502559dc"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="6e3d1b0e"/>
+      <xilinx:checksum xilinx:scope="ports" xilinx:value="4b7747cf"/>
+      <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="caa8cba1"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="642b37c3"/>
+    </xilinx:packagingInfo>
+  </spirit:vendorExtensions>
+</spirit:component>
