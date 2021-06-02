@@ -26,7 +26,7 @@ module axis_data_generator #
     
     COUNTER_TC_MACRO #
     (
-        .COUNT_BY      (48'h1              ),
+        .COUNT_BY      (48'h1             ),
         .DEVICE        ("7SERIES"         ), 
         .DIRECTION     ("UP"              ),
         .RESET_UPON_TC ("TRUE"            ),
@@ -59,7 +59,7 @@ module axis_data_generator #
             single_bram_inst_0
             (
               .DO    (data                           ),
-              .ADDR  (counter_value                  ), //width?
+              .ADDR  (counter_value                  ),
               .CLK   (clk_i                          ),
               .DI    ({AXIS_DATA_WIDTH{1'h0}}        ),
               .EN    (enable_i                       ),

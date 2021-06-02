@@ -35,7 +35,7 @@ module axis_data_generator_cntr #
     assign m_axis_tkeep_o   = AXIS_TKEEP;
     assign m_axis_tlast_o   = counter_terminal_i;
     
-    assign counter_enable_o = (/*(SENDING_STATE == fsm_state) &&*/ (1'h1 == m_axis_tready_i));
+    assign counter_enable_o = (1'h1 == m_axis_tready_i);
     assign m_axis_tdata_o   = data_i;
     
     always @( posedge clk_i ) begin

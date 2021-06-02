@@ -3,7 +3,7 @@
 module axis_udp_filter #
 (
     parameter integer STREAM_DATA_WIDTH = 32,
-    parameter [47:0]  MAC_ADDRESS       = 48'h000a35000102,
+    parameter [47:0]  MAC_ADDRESS       = 48'h00350a000201,
     parameter [7:0]   IP_PART_1         = 192, 
     parameter [7:0]   IP_PART_2         = 168, 
     parameter [7:0]   IP_PART_3         = 18, 
